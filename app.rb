@@ -43,7 +43,7 @@ class App < Sinatra::Application
   end
 
   def validate_url(url)
-    if url =~ /^(https?:\/\/)?(\w+)\.([a-zA-Z]{2,6})(\/\w*)*\/?$/
+    if url =~ /^(?:https?:\/\/)?(?:www.)?(\w+)\.([a-zA-Z]{2,6})(\/\w*)*\/?$/
       true
     elsif url.strip.empty?
       true
