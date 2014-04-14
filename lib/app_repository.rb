@@ -7,9 +7,11 @@ class AppRepository
       @db = db[:apps]
     end
 
-    def create(app_name, app_url = nil)
-      app_url = 'None provided' unless app_url
+    def create?(app_name, app_url = nil)
+      app_url = 'None provided' unless app_url && !app_url.strip.empty?
       db.insert(:app_name => app_name, :app_url => app_url)
+    rescue Sequel::UniqueConstraintViolation
+      false
     end
 
     def find(id)
