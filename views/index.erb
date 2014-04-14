@@ -1,0 +1,8 @@
+<div id="add_apps">
+  <p><%= error_message %></p>
+  <form method="post" action="create">
+    <input type="text" name="app_name" placeholder="Enter the app name" value="<%= app_name %>" autofocus>
+    <input type="text" name="app_url" placeholder="Enter the app url" value="<%= app_url %>">
+    <input type="submit" value="Add app">
+  </form>
+</div>

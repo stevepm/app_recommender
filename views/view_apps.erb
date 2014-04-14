@@ -1,0 +1,5 @@
+<ul>
+  <% db.each do |app| %>
+    <li><%= app[:app_name] %> => <%= app[:app_url]%></li>
+  <% end %>
+</ul>
